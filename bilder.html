@@ -13,7 +13,9 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bilder.css">
+    <link rel="stylesheet" href="css/unterseiten.css">
     <script src="js/script.js" defer></script>
+    <script src="js/unterseiten-slideshow.js" defer></script>
 </head>
 
 <body>
@@ -28,7 +30,7 @@
 
                 <div class="brand-copy">
                     <strong>Vamos Lager</strong>
-                    <span>Mit Freunden unterwegs!</span>
+                    <span>Das Friesoyther Tour-Team von St. Marien</span>
                 </div>
             </a>
 
@@ -58,10 +60,31 @@
     </header>
 
     <main>
-        <section class="page-hero gallery-hero">
-            <div class="container">
+        <section class="subpage-hero gallery-subpage-hero" aria-labelledby="page-title">
+            <div class="subpage-slideshow" aria-hidden="true">
+                <div
+                    class="subpage-slide is-active"
+                    style="background-image: url('img/slideshow/slide1.JPG');"
+                ></div>
+                <div
+                    class="subpage-slide"
+                    style="background-image: url('img/slideshow/slide2.JPG');"
+                ></div>
+                <div
+                    class="subpage-slide"
+                    style="background-image: url('img/slideshow/slide3.jpg');"
+                ></div>
+                <div
+                    class="subpage-slide"
+                    style="background-image: url('img/slideshow/slide4.JPG');"
+                ></div>
+            </div>
+
+            <div class="subpage-hero-overlay"></div>
+
+            <div class="container subpage-hero-content">
                 <p class="eyebrow">Unsere Erinnerungen</p>
-                <h1>Bilder aus den Lagern</h1>
+                <h1 id="page-title">Bilder aus den Lagern</h1>
 
                 <p>
                     Entdecke unsere Reisen, Tagesberichte und Bilder
@@ -76,7 +99,7 @@
             </div>
         </section>
 
-        <section>
+        <section class="content-section">
             <div class="container gallery-layout">
                 <aside class="year-navigation">
                     <div class="year-navigation-inner">
@@ -289,7 +312,7 @@
                 >
 
                 <h3>Vamos Lager</h3>
-                <p>Mit Freunden unterwegs!</p>
+                <p>Das Friesoyther Tour-Team von St. Marien.</p>
             </div>
 
             <div>

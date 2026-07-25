@@ -5,131 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Downloads für das Vamos Lager: Packlisten, Formulare und wichtige Informationen.">
     <title>Vamos Lager | Downloads</title>
-
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/unterseiten.css">
     <script src="js/script.js" defer></script>
-
-    <style>
-        .download-hero {
-            padding: 5rem 0 3.5rem;
-            background:
-                linear-gradient(135deg, rgba(4, 61, 32, 0.96), rgba(14, 108, 62, 0.86)),
-                url('img/slideshow/slide1.jpg') center / cover;
-            color: #fff;
-        }
-
-        .download-hero .hero-copy {
-            max-width: 720px;
-        }
-
-        .download-hero h1 {
-            margin-bottom: 1rem;
-        }
-
-        .download-hero p:last-child {
-            max-width: 620px;
-            font-size: 1.08rem;
-            line-height: 1.7;
-        }
-
-        .downloads-section {
-            padding: 4rem 0;
-        }
-
-        .downloads-intro {
-            max-width: 720px;
-            margin-bottom: 2rem;
-        }
-
-        .download-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 1.25rem;
-        }
-
-        .download-card {
-            display: flex;
-            align-items: center;
-            gap: 1.25rem;
-            padding: 1.4rem;
-            border: 1px solid rgba(4, 61, 32, 0.12);
-            border-radius: 18px;
-            background: #fff;
-            box-shadow: 0 12px 30px rgba(4, 61, 32, 0.08);
-        }
-
-        .download-icon {
-            display: grid;
-            place-items: center;
-            flex: 0 0 58px;
-            width: 58px;
-            height: 58px;
-            border-radius: 16px;
-            background: rgba(14, 108, 62, 0.1);
-            font-size: 1.7rem;
-        }
-
-        .download-content {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .download-content h2 {
-            margin: 0 0 0.35rem;
-            font-size: 1.15rem;
-        }
-
-        .download-content p {
-            margin: 0;
-            color: #5d6b63;
-            line-height: 1.5;
-        }
-
-        .file-meta {
-            display: inline-block;
-            margin-top: 0.55rem;
-            font-size: 0.82rem;
-            font-weight: 700;
-            color: #0e6c3e;
-        }
-
-        .download-button {
-            white-space: nowrap;
-        }
-
-        .download-note {
-            margin-top: 2rem;
-            padding: 1.25rem 1.4rem;
-            border-radius: 16px;
-            background: rgba(14, 108, 62, 0.08);
-        }
-
-        .download-note p {
-            margin: 0;
-        }
-
-        @media (max-width: 820px) {
-            .download-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 560px) {
-            .download-hero {
-                padding: 4rem 0 3rem;
-            }
-
-            .download-card {
-                align-items: flex-start;
-                flex-wrap: wrap;
-            }
-
-            .download-button {
-                width: 100%;
-                text-align: center;
-            }
-        }
-    </style>
+    <script src="js/unterseiten-slideshow.js" defer></script>
 </head>
 <body>
     <header class="site-header">
@@ -141,15 +20,8 @@
                     <span>Das Friesoyther Tour-Team von St. Marien</span>
                 </div>
             </a>
-
-            <button
-                class="menu-toggle"
-                type="button"
-                aria-label="Navigation öffnen"
-                aria-expanded="false"
-                aria-controls="main-navigation"
-            >☰</button>
-
+            <button class="menu-toggle" type="button" aria-label="Navigation öffnen"
+                    aria-expanded="false" aria-controls="main-navigation">☰</button>
             <nav id="main-navigation" class="main-nav" aria-label="Hauptnavigation">
                 <a href="index.html">Aktuelles</a>
                 <a href="lager2027.html">Lager 2027</a>
@@ -160,128 +32,35 @@
             </nav>
         </div>
     </header>
-
     <main>
-        <section class="download-hero">
-            <div class="container">
-                <div class="hero-copy">
-                    <p class="eyebrow">Alles griffbereit</p>
-                    <h1>Downloads</h1>
-                    <p>
-                        Hier findest du Packlisten, Formulare und weitere wichtige
-                        Unterlagen für das Vamos Lager zum Herunterladen.
-                    </p>
-                </div>
+        <section class="subpage-hero" aria-labelledby="page-title">
+            <div class="subpage-slideshow" aria-hidden="true">
+                <div class="subpage-slide is-active" style="background-image:url('img/slideshow/slide1.JPG')"></div>
+                <div class="subpage-slide" style="background-image:url('img/slideshow/slide2.JPG')"></div>
+                <div class="subpage-slide" style="background-image:url('img/slideshow/slide3.jpg')"></div>
+                <div class="subpage-slide" style="background-image:url('img/slideshow/slide4.JPG')"></div>
+            </div>
+            <div class="subpage-hero-overlay"></div>
+            <div class="container subpage-hero-content">
+                <p class="eyebrow">Alles griffbereit</p>
+                <h1 id="page-title">Downloads</h1>
+                <p>Hier findest du die wichtigsten Unterlagen für das Vamos Lager zum Herunterladen.</p>
             </div>
         </section>
-
-        <section class="downloads-section">
+        <section class="content-section">
             <div class="container">
-                <div class="downloads-intro">
-                    <p class="eyebrow">Dokumente &amp; Formulare</p>
-                    <h2>Wichtige Unterlagen</h2>
-                    <p>
-                        Klicke auf den jeweiligen Button, um die gewünschte Datei
-                        direkt herunterzuladen.
-                    </p>
-                </div>
-
+                <div class="section-heading"><div><p class="eyebrow">Dokumente &amp; Formulare</p><h2>Wichtige Unterlagen</h2></div><p>Vier zentrale Dokumente, damit du alles schnell findest.</p></div>
                 <div class="download-grid">
-                    <article class="download-card">
-                        <div class="download-icon" aria-hidden="true">🎒</div>
-                        <div class="download-content">
-                            <h2>Packliste</h2>
-                            <p>Alles, was für die Jugendfahrt ins Gepäck gehört.</p>
-                            <span class="file-meta">PDF-Dokument</span>
-                        </div>
-                        <a class="button button-primary download-button" href="downloads/packliste.pdf" download>
-                            Herunterladen
-                        </a>
-                    </article>
-
-                    <article class="download-card">
-                        <div class="download-icon" aria-hidden="true">📝</div>
-                        <div class="download-content">
-                            <h2>Anmeldeformular</h2>
-                            <p>Das Formular für die Anmeldung zur kommenden Fahrt.</p>
-                            <span class="file-meta">PDF-Dokument</span>
-                        </div>
-                        <a class="button button-primary download-button" href="downloads/anmeldung.pdf" download>
-                            Herunterladen
-                        </a>
-                    </article>
-
-                    <article class="download-card">
-                        <div class="download-icon" aria-hidden="true">ℹ️</div>
-                        <div class="download-content">
-                            <h2>Teilnehmerinformationen</h2>
-                            <p>Wichtige Hinweise zu Ablauf, Anreise und Organisation.</p>
-                            <span class="file-meta">PDF-Dokument</span>
-                        </div>
-                        <a class="button button-primary download-button" href="downloads/teilnehmerinformationen.pdf" download>
-                            Herunterladen
-                        </a>
-                    </article>
-
-                    <article class="download-card">
-                        <div class="download-icon" aria-hidden="true">🩺</div>
-                        <div class="download-content">
-                            <h2>Gesundheitsbogen</h2>
-                            <p>Angaben zu Gesundheit, Medikamenten und Besonderheiten.</p>
-                            <span class="file-meta">PDF-Dokument</span>
-                        </div>
-                        <a class="button button-primary download-button" href="downloads/gesundheitsbogen.pdf" download>
-                            Herunterladen
-                        </a>
-                    </article>
-
-                    <article class="download-card">
-                        <div class="download-icon" aria-hidden="true">📷</div>
-                        <div class="download-content">
-                            <h2>Fotoerlaubnis</h2>
-                            <p>Einverständniserklärung zur Nutzung von Lagerfotos.</p>
-                            <span class="file-meta">PDF-Dokument</span>
-                        </div>
-                        <a class="button button-primary download-button" href="downloads/fotoerlaubnis.pdf" download>
-                            Herunterladen
-                        </a>
-                    </article>
-
-                    <article class="download-card">
-                        <div class="download-icon" aria-hidden="true">📅</div>
-                        <div class="download-content">
-                            <h2>Terminübersicht</h2>
-                            <p>Alle wichtigen Termine rund um Anmeldung und Abfahrt.</p>
-                            <span class="file-meta">PDF-Dokument</span>
-                        </div>
-                        <a class="button button-primary download-button" href="downloads/terminuebersicht.pdf" download>
-                            Herunterladen
-                        </a>
-                    </article>
+                    <article class="download-card"><div class="download-icon">🎒</div><div class="download-content"><h2>Packliste</h2><p>Alles, was für die Jugendfahrt ins Gepäck gehört.</p><span class="file-meta">PDF-Dokument</span></div><a class="button button-primary download-button" href="downloads/packliste.pdf" download>Herunterladen</a></article>
+                    <article class="download-card"><div class="download-icon">📝</div><div class="download-content"><h2>Anmeldeformular</h2><p>Das Formular für die Anmeldung zur kommenden Fahrt.</p><span class="file-meta">PDF-Dokument</span></div><a class="button button-primary download-button" href="downloads/anmeldung.pdf" download>Herunterladen</a></article>
+                    <article class="download-card"><div class="download-icon">ℹ️</div><div class="download-content"><h2>Teilnehmerinformationen</h2><p>Wichtige Hinweise zu Ablauf, Anreise und Organisation.</p><span class="file-meta">PDF-Dokument</span></div><a class="button button-primary download-button" href="downloads/teilnehmerinformationen.pdf" download>Herunterladen</a></article>
+                    <article class="download-card"><div class="download-icon">🩺</div><div class="download-content"><h2>Gesundheitsbogen</h2><p>Angaben zu Gesundheit, Medikamenten und Besonderheiten.</p><span class="file-meta">PDF-Dokument</span></div><a class="button button-primary download-button" href="downloads/gesundheitsbogen.pdf" download>Herunterladen</a></article>
                 </div>
-
-                <div class="download-note">
-                    <p>
-                        <strong>Hinweis:</strong> Lege deine PDF-Dateien im Ordner
-                        <code>downloads</code> ab und verwende die oben eingetragenen Dateinamen.
-                    </p>
-                </div>
+                <div class="cta-box"><div><h2>Du findest ein Dokument nicht?</h2><p>Schreib uns gerne – wir helfen dir weiter.</p></div><a class="button button-primary" href="kontakt.html">Kontakt aufnehmen</a></div>
             </div>
         </section>
 
-        <section class="cta">
-            <div class="container">
-                <div class="cta-box">
-                    <div>
-                        <h2>Du findest ein Dokument nicht?</h2>
-                        <p>Schreib uns gerne – wir helfen dir weiter.</p>
-                    </div>
-                    <a class="button button-primary" href="kontakt.html">Kontakt aufnehmen</a>
-                </div>
-            </div>
-        </section>
     </main>
-
     <footer class="site-footer">
         <div class="container footer-grid">
             <div>
@@ -289,7 +68,6 @@
                 <h3>Vamos Lager</h3>
                 <p>Das Friesoyther Tour-Team von St. Marien.</p>
             </div>
-
             <div>
                 <h3>Navigation</h3>
                 <div class="footer-links">
@@ -299,7 +77,6 @@
                     <a href="bilder.html">Bilder aus den Lagern</a>
                 </div>
             </div>
-
             <div>
                 <h3>Service</h3>
                 <div class="footer-links">
@@ -308,10 +85,7 @@
                 </div>
             </div>
         </div>
-
-        <div class="container footer-bottom">
-            &copy; <span id="year"></span> Vamos Lager
-        </div>
+        <div class="container footer-bottom">&copy; <span id="year"></span> Vamos Lager</div>
     </footer>
 </body>
 </html>

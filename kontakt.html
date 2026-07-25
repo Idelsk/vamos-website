@@ -3,548 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta
-        name="description"
-        content="Kontakt zum Vamos Lager – schreibt uns eine Nachricht oder erreicht unsere Lagerleiter telefonisch."
-    >
-
+    <meta name="description" content="Kontakt zum Vamos Lager – schreibt uns eine Nachricht oder erreicht unsere Lagerleiter telefonisch.">
     <title>Vamos Lager | Kontakt</title>
-
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/unterseiten.css">
     <script src="js/script.js" defer></script>
-
-    <style>
-        :root {
-            --contact-green: #0f6b3f;
-            --contact-green-dark: #08492b;
-            --contact-green-light: #eaf5ef;
-            --contact-text: #20322a;
-            --contact-muted: #65736c;
-            --contact-border: #d9e4de;
-            --contact-surface: #ffffff;
-            --contact-background: #f5f8f6;
-            --contact-shadow: 0 18px 45px rgba(11, 58, 35, 0.11);
-        }
-
-        .contact-hero {
-            position: relative;
-            overflow: hidden;
-            padding: clamp(4.5rem, 9vw, 7.5rem) 0 clamp(3.5rem, 7vw, 5.5rem);
-            color: #fff;
-            background:
-                linear-gradient(115deg, rgba(4, 61, 32, 0.97), rgba(13, 100, 59, 0.86)),
-                url("img/slideshow/slide1.jpg") center / cover no-repeat;
-        }
-
-        .contact-hero::after {
-            content: "";
-            position: absolute;
-            right: -8rem;
-            bottom: -12rem;
-            width: 30rem;
-            height: 30rem;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .contact-hero-inner {
-            position: relative;
-            z-index: 1;
-            max-width: 760px;
-        }
-
-        .contact-hero .eyebrow {
-            margin: 0 0 1rem;
-            color: #d9f3e5;
-        }
-
-        .contact-hero h1 {
-            margin: 0;
-            font-size: clamp(2.7rem, 7vw, 5rem);
-            line-height: 0.98;
-            letter-spacing: -0.045em;
-        }
-
-        .contact-hero p:last-child {
-            max-width: 650px;
-            margin: 1.4rem 0 0;
-            font-size: clamp(1.05rem, 2vw, 1.25rem);
-            line-height: 1.7;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .contact-section {
-            padding: clamp(3.5rem, 7vw, 6rem) 0;
-            background: var(--contact-background);
-        }
-
-        .contact-layout {
-            display: grid;
-            grid-template-columns: minmax(0, 1.55fr) minmax(290px, 0.85fr);
-            gap: clamp(1.5rem, 4vw, 3rem);
-            align-items: start;
-        }
-
-        .contact-panel,
-        .contact-info-card {
-            border: 1px solid var(--contact-border);
-            border-radius: 24px;
-            background: var(--contact-surface);
-            box-shadow: var(--contact-shadow);
-        }
-
-        .contact-panel {
-            padding: clamp(1.4rem, 4vw, 2.6rem);
-        }
-
-        .contact-panel h2,
-        .contact-info-card h2 {
-            margin: 0;
-            color: var(--contact-text);
-            font-size: clamp(1.65rem, 3vw, 2.25rem);
-        }
-
-        .contact-intro {
-            margin: 0.75rem 0 2rem;
-            color: var(--contact-muted);
-            line-height: 1.7;
-        }
-
-        .contact-form {
-            display: grid;
-            gap: 1.25rem;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 1rem;
-        }
-
-        .form-field {
-            display: grid;
-            gap: 0.55rem;
-        }
-
-        .form-field label,
-        .captcha-label {
-            color: var(--contact-text);
-            font-weight: 700;
-        }
-
-        .required {
-            color: #b42318;
-        }
-
-        .form-field input,
-        .form-field textarea,
-        .captcha-input {
-            width: 100%;
-            border: 1px solid #bdcbc3;
-            border-radius: 13px;
-            padding: 0.9rem 1rem;
-            color: var(--contact-text);
-            background: #fff;
-            font: inherit;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .form-field textarea {
-            min-height: 180px;
-            resize: vertical;
-        }
-
-        .form-field input:focus,
-        .form-field textarea:focus,
-        .captcha-input:focus {
-            outline: none;
-            border-color: var(--contact-green);
-            box-shadow: 0 0 0 4px rgba(15, 107, 63, 0.12);
-        }
-
-        .captcha-box {
-            display: grid;
-            grid-template-columns: auto minmax(130px, 1fr);
-            gap: 1rem;
-            align-items: end;
-            padding: 1rem;
-            border-radius: 16px;
-            background: var(--contact-green-light);
-        }
-
-        .captcha-code {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 120px;
-            min-height: 48px;
-            margin-top: 0.55rem;
-            border: 1px dashed rgba(8, 73, 43, 0.45);
-            border-radius: 11px;
-            color: var(--contact-green-dark);
-            background: rgba(255, 255, 255, 0.75);
-            font-size: 1.25rem;
-            font-weight: 800;
-            letter-spacing: 0.14em;
-            user-select: none;
-        }
-
-        .privacy-check {
-            display: flex;
-            gap: 0.75rem;
-            align-items: flex-start;
-            color: var(--contact-muted);
-            line-height: 1.5;
-        }
-
-        .privacy-check input {
-            width: 1.1rem;
-            height: 1.1rem;
-            margin-top: 0.2rem;
-            accent-color: var(--contact-green);
-            flex: 0 0 auto;
-        }
-
-        .privacy-check a {
-            color: var(--contact-green-dark);
-            font-weight: 700;
-        }
-
-        .form-note {
-            margin: -0.25rem 0 0;
-            color: var(--contact-muted);
-            font-size: 0.92rem;
-        }
-
-        .submit-button {
-            justify-self: start;
-            border: 0;
-            cursor: pointer;
-        }
-
-        .form-message {
-            display: none;
-            margin: 0;
-            padding: 0.9rem 1rem;
-            border-radius: 12px;
-            font-weight: 700;
-        }
-
-        .form-message.is-visible {
-            display: block;
-        }
-
-        .form-message.error {
-            color: #8a1c14;
-            background: #fdecea;
-        }
-
-        .form-message.success {
-            color: #075f35;
-            background: #e5f6ec;
-        }
-
-        .contact-sidebar {
-            display: grid;
-            gap: 1.4rem;
-        }
-
-        .contact-info-card {
-            padding: clamp(1.4rem, 4vw, 2rem);
-        }
-
-        .contact-info-card > p {
-            color: var(--contact-muted);
-            line-height: 1.7;
-        }
-
-        .contact-person {
-            display: grid;
-            grid-template-columns: 50px minmax(0, 1fr);
-            gap: 1rem;
-            align-items: center;
-            padding: 1.1rem 0;
-            border-top: 1px solid var(--contact-border);
-        }
-
-        .contact-person:first-of-type {
-            margin-top: 1rem;
-        }
-
-        .person-icon {
-            display: grid;
-            place-items: center;
-            width: 50px;
-            height: 50px;
-            border-radius: 15px;
-            color: #fff;
-            background: var(--contact-green);
-            font-size: 1.35rem;
-        }
-
-        .contact-person h3 {
-            margin: 0 0 0.2rem;
-            color: var(--contact-text);
-            font-size: 1.05rem;
-        }
-
-        .contact-person a {
-            color: var(--contact-green-dark);
-            font-weight: 800;
-            text-decoration: none;
-        }
-
-        .contact-person a:hover {
-            text-decoration: underline;
-        }
-
-        .info-note {
-            padding: 1.35rem;
-            border-radius: 20px;
-            color: #eaf7f0;
-            background: var(--contact-green-dark);
-        }
-
-        .info-note strong {
-            display: block;
-            margin-bottom: 0.45rem;
-            color: #fff;
-            font-size: 1.08rem;
-        }
-
-        .info-note p {
-            margin: 0;
-            line-height: 1.65;
-        }
-
-        @media (max-width: 880px) {
-            .contact-layout {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-sidebar {
-                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-            }
-        }
-
-        @media (max-width: 680px) {
-            .form-row,
-            .contact-sidebar,
-            .captcha-box {
-                grid-template-columns: 1fr;
-            }
-
-            .submit-button {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-    </style>
+    <script src="js/unterseiten-slideshow.js" defer></script>
 </head>
-
 <body>
     <header class="site-header">
         <div class="container header-inner">
             <a href="index.html" class="brand" aria-label="Vamos Lager Startseite">
-                <img
-                    class="brand-logo"
-                    src="img/vamoslogorund.png"
-                    alt="Logo des Vamos Lagers"
-                >
-
+                <img class="brand-logo" src="img/vamoslogorund.png" alt="Logo des Vamos Lagers">
                 <div class="brand-copy">
                     <strong>Vamos Lager</strong>
                     <span>Das Friesoyther Tour-Team von St. Marien</span>
                 </div>
             </a>
-
-            <button
-                class="menu-toggle"
-                type="button"
-                aria-label="Navigation öffnen"
-                aria-expanded="false"
-                aria-controls="main-navigation"
-            >
-                ☰
-            </button>
-
-            <nav
-                id="main-navigation"
-                class="main-nav"
-                aria-label="Hauptnavigation"
-            >
+            <button class="menu-toggle" type="button" aria-label="Navigation öffnen"
+                    aria-expanded="false" aria-controls="main-navigation">☰</button>
+            <nav id="main-navigation" class="main-nav" aria-label="Hauptnavigation">
                 <a href="index.html">Aktuelles</a>
                 <a href="lager2027.html">Lager 2027</a>
                 <a href="ueber-uns.html">Über uns</a>
                 <a href="bilder.html">Bilder aus den Lagern</a>
                 <a href="download.html">Downloadbereich</a>
-                <a class="active" href="kontakt.html" aria-current="page">Kontakt</a>
+                <a class="active" href="kontakt.html">Kontakt</a>
             </nav>
         </div>
     </header>
-
     <main>
-        <section class="contact-hero" aria-labelledby="contact-title">
-            <div class="container contact-hero-inner">
+        <section class="subpage-hero" aria-labelledby="page-title">
+            <div class="subpage-slideshow" aria-hidden="true">
+                <div class="subpage-slide is-active" style="background-image:url('img/slideshow/slide1.JPG')"></div>
+                <div class="subpage-slide" style="background-image:url('img/slideshow/slide2.JPG')"></div>
+                <div class="subpage-slide" style="background-image:url('img/slideshow/slide3.jpg')"></div>
+                <div class="subpage-slide" style="background-image:url('img/slideshow/slide4.JPG')"></div>
+            </div>
+            <div class="subpage-hero-overlay"></div>
+            <div class="container subpage-hero-content">
                 <p class="eyebrow">Wir sind für euch da</p>
-                <h1 id="contact-title">Kontakt</h1>
-                <p>
-                    Schreibt uns gerne eine Nachricht und wir werden euch
-                    schnellstmöglich antworten.
-                </p>
+                <h1 id="page-title">Kontakt</h1>
+                <p>Schreibt uns gerne eine Nachricht und wir werden euch schnellstmöglich antworten.</p>
             </div>
         </section>
-
-        <section class="contact-section">
+        <section class="content-section light-section">
             <div class="container contact-layout">
                 <div class="contact-panel">
-                    <h2>Kontaktformular</h2>
-                    <p class="contact-intro">
-                        Nutzt das Formular für Fragen zum Lager, zur Anmeldung,
-                        zur Ausrüstung oder zu organisatorischen Themen.
-                    </p>
-
-                    <!--
-                        WICHTIG: Für einen echten E-Mail-Versand muss bei "action"
-                        später ein Formular-Dienst oder ein eigenes PHP-Skript
-                        eingetragen werden.
-                    -->
+                    <p class="eyebrow">Nachricht senden</p><h2>Kontaktformular</h2>
+                    <p class="contact-intro">Nutzt das Formular für Fragen zum Lager, zur Anmeldung, zur Ausrüstung oder zu organisatorischen Themen.</p>
                     <form id="contact-form" class="contact-form" action="#" method="post">
                         <div class="form-row">
-                            <div class="form-field">
-                                <label for="name">Name <span class="required">*</span></label>
-                                <input
-                                    id="name"
-                                    name="name"
-                                    type="text"
-                                    autocomplete="name"
-                                    required
-                                >
-                            </div>
-
-                            <div class="form-field">
-                                <label for="email">E-Mail <span class="required">*</span></label>
-                                <input
-                                    id="email"
-                                    name="email"
-                                    type="email"
-                                    autocomplete="email"
-                                    required
-                                >
-                            </div>
+                            <div class="form-field"><label for="name">Name <span class="required">*</span></label><input id="name" name="name" type="text" autocomplete="name" required></div>
+                            <div class="form-field"><label for="email">E-Mail <span class="required">*</span></label><input id="email" name="email" type="email" autocomplete="email" required></div>
                         </div>
-
-                        <div class="form-field">
-                            <label for="message">Nachricht <span class="required">*</span></label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                required
-                            ></textarea>
-                        </div>
-
-                        <div class="captcha-box">
-                            <div>
-                                <span class="captcha-label">Bitte den Code eingeben:</span>
-                                <div id="captcha-code" class="captcha-code" aria-label="Sicherheitscode"></div>
-                            </div>
-
-                            <div class="form-field">
-                                <label for="captcha">Sicherheitscode <span class="required">*</span></label>
-                                <input
-                                    id="captcha"
-                                    class="captcha-input"
-                                    name="captcha"
-                                    type="text"
-                                    inputmode="text"
-                                    autocomplete="off"
-                                    required
-                                >
-                            </div>
-                        </div>
-
-                        <label class="privacy-check" for="privacy">
-                            <input id="privacy" name="privacy" type="checkbox" required>
-                            <span>
-                                Es gilt unsere
-                                <a href="datenschutz.html">Datenschutzerklärung</a>.
-                                Ich habe sie gelesen und stimme der Verarbeitung
-                                meiner Angaben zur Bearbeitung der Anfrage zu.
-                                <span class="required">*</span>
-                            </span>
-                        </label>
-
-                        <p class="form-note">
-                            Hinweis: Bitte die mit <span class="required">*</span>
-                            gekennzeichneten Felder ausfüllen.
-                        </p>
-
-                        <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
-
-                        <button class="button button-primary submit-button" type="submit">
-                            Nachricht senden
-                        </button>
+                        <div class="form-field"><label for="message">Nachricht <span class="required">*</span></label><textarea id="message" name="message" required></textarea></div>
+                        <label class="privacy-check" for="privacy"><input id="privacy" name="privacy" type="checkbox" required><span>Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zu. <span class="required">*</span></span></label>
+                        <button class="button button-primary" type="submit">Nachricht senden</button>
+                        <p class="form-note">Für einen echten Versand muss noch ein Formular-Dienst oder ein Server-Skript verbunden werden.</p>
                     </form>
                 </div>
-
-                <aside class="contact-sidebar" aria-label="Telefonischer Kontakt">
+                <aside class="contact-sidebar">
                     <div class="contact-info-card">
-                        <h2>Telefonisch erreichbar</h2>
-                        <p>
-                            Unsere Lagerleiter helfen euch bei dringenden oder
-                            persönlichen Fragen gerne direkt weiter.
-                        </p>
-
-                        <div class="contact-person">
-                            <div class="person-icon" aria-hidden="true">☎</div>
-                            <div>
-                                <h3>Michael Kruse</h3>
-                                <a href="tel:+491726240254">0172 / 6240254</a>
-                            </div>
-                        </div>
-
-                        <div class="contact-person">
-                            <div class="person-icon" aria-hidden="true">☎</div>
-                            <div>
-                                <h3>Jann Reiners</h3>
-                                <a href="tel:+4917639446436">0176 / 39446436</a>
-                            </div>
-                        </div>
+                        <p class="eyebrow">Direkter Kontakt</p><h2>Telefonisch erreichbar</h2>
+                        <div class="contact-person"><div class="person-icon">☎</div><div><h3>Michael Kruse</h3><a href="tel:+491726240254">0172 / 6240254</a></div></div>
+                        <div class="contact-person"><div class="person-icon">☎</div><div><h3>Jann Reiners</h3><a href="tel:+4917639446436">0176 / 39446436</a></div></div>
                     </div>
-
-                    <div class="info-note">
-                        <strong>Fragen zum nächsten Lager?</strong>
-                        <p>
-                            Aktuelle Termine, Hinweise und Informationen findet
-                            ihr zusätzlich auf der Seite zum Lager 2027.
-                        </p>
-                    </div>
+                    <div class="info-note"><strong>Fragen zum nächsten Lager?</strong><p>Aktuelle Termine und Hinweise findet ihr auf der Seite zum Lager 2027.</p></div>
                 </aside>
             </div>
         </section>
-    </main>
 
+    </main>
     <footer class="site-footer">
         <div class="container footer-grid">
             <div>
-                <img
-                    class="footer-logo"
-                    src="img/vamoslogorund.png"
-                    alt="Vamos Logo"
-                >
-
+                <img class="footer-logo" src="img/vamoslogorund.png" alt="Vamos Logo">
                 <h3>Vamos Lager</h3>
-
-                <p>
-                    Das Friesoyther Tour-Team von St. Marien.
-                    Gemeinschaft, Abenteuer und unvergessliche Erlebnisse.
-                </p>
+                <p>Das Friesoyther Tour-Team von St. Marien.</p>
             </div>
-
             <div>
                 <h3>Navigation</h3>
-
                 <div class="footer-links">
                     <a href="index.html">Aktuelles</a>
                     <a href="lager2027.html">Lager 2027</a>
@@ -552,63 +91,15 @@
                     <a href="bilder.html">Bilder aus den Lagern</a>
                 </div>
             </div>
-
             <div>
                 <h3>Service</h3>
-
                 <div class="footer-links">
                     <a href="download.html">Downloadbereich</a>
                     <a href="kontakt.html">Kontakt</a>
                 </div>
             </div>
         </div>
-
-        <div class="container footer-bottom">
-            &copy; <span id="year"></span> Vamos Lager
-        </div>
+        <div class="container footer-bottom">&copy; <span id="year"></span> Vamos Lager</div>
     </footer>
-
-    <script>
-        (() => {
-            const form = document.getElementById("contact-form");
-            const captchaCode = document.getElementById("captcha-code");
-            const captchaInput = document.getElementById("captcha");
-            const formMessage = document.getElementById("form-message");
-            const characters = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-            let currentCode = "";
-
-            function createCaptcha() {
-                currentCode = Array.from({ length: 5 }, () => {
-                    return characters[Math.floor(Math.random() * characters.length)];
-                }).join("");
-
-                captchaCode.textContent = currentCode;
-            }
-
-            function showMessage(text, type) {
-                formMessage.textContent = text;
-                formMessage.className = `form-message is-visible ${type}`;
-            }
-
-            form.addEventListener("submit", (event) => {
-                event.preventDefault();
-
-                if (captchaInput.value.trim().toUpperCase() !== currentCode) {
-                    showMessage("Der eingegebene Sicherheitscode ist nicht korrekt.", "error");
-                    captchaInput.focus();
-                    captchaInput.select();
-                    createCaptcha();
-                    return;
-                }
-
-                showMessage(
-                    "Das Formular ist vorbereitet. Für den tatsächlichen Versand muss noch ein Formular-Dienst oder ein Server-Skript verbunden werden.",
-                    "success"
-                );
-            });
-
-            createCaptcha();
-        })();
-    </script>
 </body>
 </html>
