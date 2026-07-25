@@ -202,7 +202,16 @@ async function initializeSlideshow() {
 /* ---------- VORHANDENE DATEIEN FINDEN ---------- */
 
 async function findAvailableSlides(maximumNumber) {
-    const extensions = ["jpg", "jpeg", "png", "webp"];
+    const extensions = [
+    "jpg",
+    "JPG",
+    "jpeg",
+    "JPEG",
+    "png",
+    "PNG",
+    "webp",
+    "WEBP"
+];
     const discoveredPaths = [];
 
     for (let number = 1; number <= maximumNumber; number += 1) {
