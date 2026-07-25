@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Vamos Lager – Gemeinschaft, Abenteuer und unvergessliche Lager in Norwegen, Schweden und Österreich."
+    >
+
+    <title>Vamos Lager | Aktuelles</title>
+
+    <!-- Zentrales Design für alle Seiten -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Zusätzliche Gestaltung nur für die Startseite -->
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- JavaScript erst laden, wenn die Seite fertig aufgebaut ist -->
+    <script src="js/script.js" defer></script>
+
+    <style>
+        .countdown {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .countdown .mini-stat {
+            min-width: 0;
+        }
+
+        .countdown .mini-stat strong {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .countdown-date {
+            margin: 1rem 0 0;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .countdown-message {
+            margin: 1.25rem 0 0;
+            font-size: 1.1rem;
+            font-weight: 800;
+        }
+
+        @media (max-width: 560px) {
+            .countdown {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand" aria-label="Vamos Lager Startseite">
+                <img
+                    class="brand-logo"
+                    src="img/vamoslogorund.png"
+                    alt="Logo des Vamos Lagers"
+                >
+
+                <div class="brand-copy">
+                    <strong>Vamos Lager</strong>
+                    <span>Das Friesoyther Tour-Team von St. Marien</span>
+                </div>
+            </a>
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Navigation öffnen"
+                aria-expanded="false"
+                aria-controls="main-navigation"
+            >
+                ☰
+            </button>
+
+            <nav
+                id="main-navigation"
+                class="main-nav"
+                aria-label="Hauptnavigation"
+            >
+                <a class="active" href="index.html">Aktuelles</a>
+                <a href="lager2027.html">Lager 2027</a>
+                <a href="ueber-uns.html">Über uns</a>
+                <a href="bilder.html">Bilder aus den Lagern</a>
+                <a href="download.html">Downloadbereich</a>
+                <a href="kontakt.html">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- =====================================================
+             HERO MIT AUTOMATISCHER HINTERGRUND-SLIDESHOW
+
+             Lege Bilder unter img/slideshow ab und benenne sie:
+             slide1.jpg, slide2.jpg, slide3.jpg usw.
+
+             Erlaubte Formate:
+             .jpg, .jpeg, .png und .webp
+             ===================================================== -->
+        <section class="hero hero-slideshow" aria-label="Willkommen beim Vamos Lager">
+            <div
+                id="slideshow"
+                class="slideshow"
+                aria-hidden="true"
+            ></div>
+
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-inner">
+                <div class="hero-copy">
+                    <p class="eyebrow">
+                        Norwegen · Schweden · Österreich
+                    </p>
+
+                    <h1>
+                        Abenteuer, die
+                        <span>verbinden.</span>
+                    </h1>
+
+                    <p class="hero-text">
+                        Willkommen beim Vamos Lager. Hier findest du aktuelle
+                        Neuigkeiten, Informationen zum Lager 2027, Erinnerungen
+                        aus vergangenen Lagern und wichtige Unterlagen.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="#aktuelles">
+                            Aktuelles entdecken
+                        </a>
+
+                        <a class="button button-secondary" href="lager2027.html">
+                            Zum Lager 2027
+                        </a>
+                    </div>
+
+                    <div class="slideshow-controls" aria-label="Slideshow steuern">
+                        <button
+                            id="previous-slide"
+                            class="slide-control"
+                            type="button"
+                            aria-label="Vorheriges Bild"
+                        >
+                            ←
+                        </button>
+
+                        <div
+                            id="slide-dots"
+                            class="slide-dots"
+                            aria-label="Bild auswählen"
+                        ></div>
+
+                        <button
+                            id="next-slide"
+                            class="slide-control"
+                            type="button"
+                            aria-label="Nächstes Bild"
+                        >
+                            →
+                        </button>
+                    </div>
+                </div>
+
+                <aside class="hero-card">
+                    <div class="flag-row" aria-label="Teilnehmende Länder">
+                        <img
+                            src="img/norwegen.png"
+                            alt="Flagge von Norwegen"
+                        >
+                        <img
+                            src="img/schweden.png"
+                            alt="Flagge von Schweden"
+                        >
+                        <img
+                            src="img/oesterreich.png"
+                            alt="Flagge von Österreich"
+                        >
+                    </div>
+
+                    <h2>Vamos Lager 2027</h2>
+
+                    <p>
+                        Die Vorbereitungen laufen. Termine, Anmeldung,
+                        Programm und wichtige Hinweise werden hier
+                        nach und nach veröffentlicht.
+                    </p>
+
+                    <div
+                        id="lager-countdown"
+                        class="mini-stats countdown"
+                        aria-label="Countdown bis zum Vamos Lager 2027"
+                    >
+                        <div class="mini-stat">
+                            <strong id="countdown-days">0</strong>
+                            <span>Tage</span>
+                        </div>
+
+                        <div class="mini-stat">
+                            <strong id="countdown-hours">00</strong>
+                            <span>Stunden</span>
+                        </div>
+
+                        <div class="mini-stat">
+                            <strong id="countdown-minutes">00</strong>
+                            <span>Minuten</span>
+                        </div>
+
+                        <div class="mini-stat">
+                            <strong id="countdown-seconds">00</strong>
+                            <span>Sekunden</span>
+                        </div>
+                    </div>
+
+                    <p class="countdown-date">
+                        Start am 10. Juli 2027
+                    </p>
+
+                    <p
+                        id="countdown-message"
+                        class="countdown-message"
+                        hidden
+                    >
+                        Das Vamos Lager 2027 hat begonnen!
+                    </p>
+                </aside>
+            </div>
+
+            <a
+                class="scroll-indicator"
+                href="#aktuelles"
+                aria-label="Zu den Neuigkeiten scrollen"
+            >
+                <span></span>
+            </a>
+        </section>
+
+        <!-- AKTUELLES -->
+        <section id="aktuelles">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Newsfeed</p>
+                        <h2>Aktuelles aus dem Lagerleben</h2>
+                    </div>
+
+                    <p>
+                        Neuigkeiten, wichtige Termine und Einblicke
+                        rund um das Vamos Lager.
+                    </p>
+                </div>
+
+                <div class="news-grid">
+                    <article class="featured-news">
+                        <div
+                            class="featured-visual"
+                            style="background-image:
+                                linear-gradient(to top, rgba(4, 61, 32, 0.9), rgba(4, 61, 32, 0.08)),
+                                url('img/slideshow/slide1.jpg');"
+                        >
+                            <h3>
+                                Die Planung für das Vamos Lager 2027
+                                hat begonnen
+                            </h3>
+                        </div>
+
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span class="tag">Lager 2027</span>
+                                <time datetime="2026-07-24">24. Juli 2026</time>
+                            </div>
+
+                            <p>
+                                Hinter den Kulissen laufen bereits die ersten
+                                Vorbereitungen. In den kommenden Monaten
+                                veröffentlichen wir Informationen zu Anmeldung,
+                                Programm, Anreise und Ausrüstung.
+                            </p>
+
+                            <a class="read-more" href="lager2027.html">
+                                Mehr erfahren →
+                            </a>
+                        </div>
+                    </article>
+
+                    <div class="side-news">
+                        <article class="news-card">
+                            <div class="news-content">
+                                <div class="news-meta">
+                                    <span class="tag">Rückblick</span>
+                                    <time datetime="2026-06-12">12. Juni 2026</time>
+                                </div>
+
+                                <h3>Neue Bildergalerie geplant</h3>
+
+                                <p>
+                                    Erinnerungen aus vergangenen Lagern werden
+                                    bald in unserer Bildergalerie gesammelt.
+                                </p>
+
+                                <a class="read-more" href="bilder.html">
+                                    Zur Bilderseite →
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="news-card">
+                            <div class="news-content">
+                                <div class="news-meta">
+                                    <span class="tag">Downloads</span>
+                                    <time datetime="2026-05-28">28. Mai 2026</time>
+                                </div>
+
+                                <h3>Dokumente und Formulare</h3>
+
+                                <p>
+                                    Packlisten, Anmeldungen und Infoblätter
+                                    werden im Downloadbereich gesammelt.
+                                </p>
+
+                                <a class="read-more" href="download.html">
+                                    Zum Downloadbereich →
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DIREKTZUGRIFF -->
+        <section class="quick-links">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Direktzugriff</p>
+                        <h2>Was suchst du?</h2>
+                    </div>
+                </div>
+
+                <div class="link-grid">
+                    <a class="link-card" href="lager2027.html">
+                        <div class="link-icon" aria-hidden="true">🏕️</div>
+                        <h3>Lager 2027</h3>
+                        <p>
+                            Termine, Anmeldung, Programm und organisatorische Hinweise.
+                        </p>
+                    </a>
+
+                    <a class="link-card" href="ueber-uns.html">
+                        <div class="link-icon" aria-hidden="true">🤝</div>
+                        <h3>Über uns</h3>
+                        <p>
+                            Erfahre mehr über unser Team und die Idee hinter Vamos.
+                        </p>
+                    </a>
+
+                    <a class="link-card" href="bilder.html">
+                        <div class="link-icon" aria-hidden="true">📸</div>
+                        <h3>Bilder aus den Lagern</h3>
+                        <p>
+                            Entdecke Eindrücke, Erinnerungen und besondere Momente.
+                        </p>
+                    </a>
+
+                    <a class="link-card" href="download.html">
+                        <div class="link-icon" aria-hidden="true">⬇️</div>
+                        <h3>Downloadbereich</h3>
+                        <p>
+                            Formulare, Packlisten und wichtige Informationen.
+                        </p>
+                    </a>
+
+                    <a class="link-card" href="kontakt.html">
+                        <div class="link-icon" aria-hidden="true">✉️</div>
+                        <h3>Kontakt</h3>
+                        <p>
+                            Hier findest du Ansprechpartner und Kontaktmöglichkeiten.
+                        </p>
+                    </a>
+
+                    <a class="link-card" href="#aktuelles">
+                        <div class="link-icon" aria-hidden="true">📰</div>
+                        <h3>Aktuelles</h3>
+                        <p>
+                            Die neuesten Meldungen direkt auf der Startseite.
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- KONTAKT-AUFRUF -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta-box">
+                    <div>
+                        <h2>Du hast Fragen zum Vamos Lager?</h2>
+                        <p>
+                            Schreib uns gerne. Wir helfen dir bei organisatorischen
+                            und allgemeinen Fragen weiter.
+                        </p>
+                    </div>
+
+                    <a class="button button-primary" href="kontakt.html">
+                        Kontakt aufnehmen
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <img
+                    class="footer-logo"
+                    src="img/vamoslogorund.png"
+                    alt="Vamos Logo"
+                >
+
+                <h3>Vamos Lager</h3>
+
+                <p>
+                    Das Friesoyther Tour-Team von St. Marien.
+                    Gemeinschaft, Abenteuer und unvergessliche Erlebnisse.
+                </p>
+            </div>
+
+            <div>
+                <h3>Navigation</h3>
+
+                <div class="footer-links">
+                    <a href="index.html">Aktuelles</a>
+                    <a href="lager2027.html">Lager 2027</a>
+                    <a href="ueber-uns.html">Über uns</a>
+                    <a href="bilder.html">Bilder aus den Lagern</a>
+                </div>
+            </div>
+
+            <div>
+                <h3>Service</h3>
+
+                <div class="footer-links">
+                    <a href="download.html">Downloadbereich</a>
+                    <a href="kontakt.html">Kontakt</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            &copy; <span id="year"></span> Vamos Lager
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const lagerStart = new Date("2027-07-10T00:00:00+02:00");
+
+            const countdown = document.getElementById("lager-countdown");
+            const message = document.getElementById("countdown-message");
+            const days = document.getElementById("countdown-days");
+            const hours = document.getElementById("countdown-hours");
+            const minutes = document.getElementById("countdown-minutes");
+            const seconds = document.getElementById("countdown-seconds");
+
+            function updateCountdown() {
+                const difference = lagerStart.getTime() - Date.now();
+
+                if (difference <= 0) {
+                    countdown.hidden = true;
+                    message.hidden = false;
+                    return;
+                }
+
+                const dayValue = Math.floor(difference / 86400000);
+                const hourValue = Math.floor((difference / 3600000) % 24);
+                const minuteValue = Math.floor((difference / 60000) % 60);
+                const secondValue = Math.floor((difference / 1000) % 60);
+
+                days.textContent = dayValue;
+                hours.textContent = String(hourValue).padStart(2, "0");
+                minutes.textContent = String(minuteValue).padStart(2, "0");
+                seconds.textContent = String(secondValue).padStart(2, "0");
+            }
+
+            updateCountdown();
+            window.setInterval(updateCountdown, 1000);
+        });
+    </script>
+
+</body>
+</html>
