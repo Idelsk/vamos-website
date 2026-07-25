@@ -1,0 +1,43 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/galerien"
+public_folder: "/images/galerien"
+
+locale: "de"
+
+collections:
+  - name: "galerien"
+    label: "Fotogalerien"
+    label_singular: "Fotogalerie"
+    folder: "galerien"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+
+    fields:
+      - label: "Titel"
+        name: "title"
+        widget: "string"
+
+      - label: "Datum"
+        name: "date"
+        widget: "datetime"
+        date_format: "DD.MM.YYYY"
+        time_format: false
+
+      - label: "Beschreibung"
+        name: "description"
+        widget: "text"
+        required: false
+
+      - label: "Bilder"
+        name: "images"
+        widget: "list"
+        summary: "{{fields.image}}"
+        field:
+          label: "Bild"
+          name: "image"
+          widget: "image"
