@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Tagesberichte und Bilder vom Vamos Lager in Norwegen 2017."
+    >
+
+    <title>Norwegen 2017 | Vamos Lager</title>
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bilder.css">
+    <script src="../../js/script.js" defer></script>
+
+    <style>
+        .day-gallery img {
+            cursor: zoom-in;
+        }
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr) auto;
+            align-items: center;
+            gap: 1rem;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.92);
+        }
+
+        .lightbox[hidden] {
+            display: none;
+        }
+
+        .lightbox-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 1100px;
+            max-height: 90vh;
+            margin: auto;
+        }
+
+        .lightbox-content img {
+            display: block;
+            max-width: 100%;
+            max-height: 78vh;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+        }
+
+        .lightbox-content figcaption {
+            margin-top: 1rem;
+            color: #ffffff;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .lightbox-close,
+        .lightbox-button {
+            border: 0;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.14);
+            cursor: pointer;
+            transition:
+                background 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-button:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        .lightbox-button {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            font-size: 1.6rem;
+        }
+
+        body.lightbox-open {
+            overflow: hidden;
+        }
+
+        @media (max-width: 700px) {
+            .lightbox {
+                grid-template-columns: 1fr;
+                padding: 4.5rem 1rem 1rem;
+            }
+
+            .lightbox-content img {
+                max-height: 68vh;
+            }
+
+            .lightbox-button {
+                position: absolute;
+                top: 50%;
+                width: 44px;
+                height: 44px;
+                transform: translateY(-50%);
+            }
+
+            .lightbox-previous {
+                left: 0.5rem;
+            }
+
+            .lightbox-next {
+                right: 0.5rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="brand">
+                <img
+                    class="brand-logo"
+                    src="../../img/vamoslogorund.png"
+                    alt="Logo des Vamos Lagers"
+                >
+
+                <div class="brand-copy">
+                    <strong>Vamos Lager</strong>
+                    <span>Mit Freunden unterwegs!</span>
+                </div>
+            </a>
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Navigation öffnen"
+                aria-expanded="false"
+                aria-controls="main-navigation"
+            >
+                ☰
+            </button>
+
+            <nav
+                id="main-navigation"
+                class="main-nav"
+                aria-label="Hauptnavigation"
+            >
+                <a href="../../index.html">Aktuelles</a>
+                <a href="../../lager2027.html">Lager 2027</a>
+                <a href="../../ueber-uns.html">Über uns</a>
+                <a class="active" href="../../bilder.html">
+                    Bilder aus den Lagern
+                </a>
+                <a href="../../download.html">Downloadbereich</a>
+                <a href="../../kontakt.html">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section
+            class="camp-detail-hero"
+            style="
+                background-image:
+                    linear-gradient(
+                        to top,
+                        rgba(3, 38, 20, 0.92),
+                        rgba(3, 38, 20, 0.36)
+                    ),
+                    url('bilder/titelbild.jpg');
+            "
+        >
+            <div class="container">
+                <a class="back-link" href="../../bilder.html">
+                    ← Zurück zu allen Lagern
+                </a>
+
+                <div class="camp-detail-heading">
+                    <img
+                        src="../../img/norwegen.png"
+                        alt="Flagge von Norwegen"
+                    >
+
+                    <div>
+                        <p class="eyebrow">Vamos Lager</p>
+                        <h1>Norwegen 2017</h1>
+
+                        <p>
+                            Tagesberichte, Erlebnisse und Bilder unserer Reise.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="camp-days-section">
+            <div class="container camp-days-layout">
+                <aside class="day-navigation">
+                    <div class="day-navigation-inner">
+                        <p class="year-navigation-title">Tage im Überblick</p>
+
+                        <nav aria-label="Tagesberichte">
+                            <a href="#tag-1">1. Tag – Anreise</a>
+                            <a href="#tag-2">2. Tag – Einleben</a>
+                        </nav>
+                    </div>
+                </aside>
+
+                <div class="day-list">
+                    <article id="tag-1" class="day-entry">
+                        <div class="day-heading">
+                            <span class="day-number">01</span>
+
+                            <div>
+                                <p class="day-label">1. Tag</p>
+                                <h2>Anreise</h2>
+                            </div>
+                        </div>
+
+                        <div class="day-text">
+                            <p>
+                                Früh am Morgen startete unsere Reise nach Norwegen.
+                                Nach dem gemeinsamen Treffen und dem Verstauen des
+                                Gepäcks ging es endlich los.
+                            </p>
+
+                            <p>
+                                Hier kannst du den vollständigen Tagesbericht
+                                einfügen und beschreiben, was ihr erlebt habt.
+                            </p>
+                        </div>
+
+                        <div class="day-gallery">
+                            <figure>
+                                <img
+                                    src="bilder/tag1/bild1.jpg"
+                                    alt="Abfahrt zum Vamos Lager"
+                                    loading="lazy"
+                                >
+                                <figcaption>
+                                    Unsere Abfahrt am frühen Morgen.
+                                </figcaption>
+                            </figure>
+
+                            <figure>
+                                <img
+                                    src="bilder/tag1/bild2.jpg"
+                                    alt="Pause während der Anreise"
+                                    loading="lazy"
+                                >
+                                <figcaption>
+                                    Eine gemeinsame Pause unterwegs.
+                                </figcaption>
+                            </figure>
+
+                            <figure>
+                                <img
+                                    src="bilder/tag1/bild3.jpg"
+                                    alt="Ankunft in Norwegen"
+                                    loading="lazy"
+                                >
+                                <figcaption>
+                                    Endlich angekommen.
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </article>
+
+                    <article id="tag-2" class="day-entry">
+                        <div class="day-heading">
+                            <span class="day-number">02</span>
+
+                            <div>
+                                <p class="day-label">2. Tag</p>
+                                <h2>Einleben und Umgebung erkunden</h2>
+                            </div>
+                        </div>
+
+                        <div class="day-text">
+                            <p>
+                                Nach der ersten Nacht starteten wir mit einem
+                                gemeinsamen Frühstück und erkundeten anschließend
+                                das Gelände.
+                            </p>
+
+                            <p>
+                                Hier kannst du den Bericht für den zweiten Tag
+                                ausführlich ergänzen.
+                            </p>
+                        </div>
+
+                        <div class="day-gallery">
+                            <figure>
+                                <img
+                                    src="bilder/tag2/bild1.jpg"
+                                    alt="Frühstück im Lager"
+                                    loading="lazy"
+                                >
+                                <figcaption>
+                                    Gemeinsames Frühstück.
+                                </figcaption>
+                            </figure>
+
+                            <figure>
+                                <img
+                                    src="bilder/tag2/bild2.jpg"
+                                    alt="Erkundung der Umgebung"
+                                    loading="lazy"
+                                >
+                                <figcaption>
+                                    Die Umgebung wird erkundet.
+                                </figcaption>
+                            </figure>
+
+                            <figure>
+                                <img
+                                    src="bilder/tag2/bild3.jpg"
+                                    alt="Gemeinsamer Abend"
+                                    loading="lazy"
+                                >
+                                <figcaption>
+                                    Ein gemütlicher gemeinsamer Abend.
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </article>
+
+                    <div class="next-camp-box">
+                        <div>
+                            <p class="eyebrow">Weiterstöbern</p>
+                            <h2>Noch mehr Lagererinnerungen</h2>
+                        </div>
+
+                        <a
+                            class="button button-primary"
+                            href="../../bilder.html"
+                        >
+                            Alle Lager ansehen
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <img
+                    class="footer-logo"
+                    src="../../img/vamoslogorund.png"
+                    alt="Vamos Logo"
+                >
+
+                <h3>Vamos Lager</h3>
+                <p>Mit Freunden unterwegs!</p>
+            </div>
+
+            <div>
+                <h3>Navigation</h3>
+
+                <div class="footer-links">
+                    <a href="../../index.html">Aktuelles</a>
+                    <a href="../../lager2027.html">Lager 2027</a>
+                    <a href="../../ueber-uns.html">Über uns</a>
+                    <a href="../../bilder.html">Bilder aus den Lagern</a>
+                </div>
+            </div>
+
+            <div>
+                <h3>Service</h3>
+
+                <div class="footer-links">
+                    <a href="../../download.html">Downloadbereich</a>
+                    <a href="../../kontakt.html">Kontakt</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            &copy; <span id="year"></span> Vamos Lager
+        </div>
+    </footer>
+
+    <div
+        id="lightbox"
+        class="lightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Bildvorschau"
+        hidden
+    >
+        <button
+            class="lightbox-close"
+            type="button"
+            aria-label="Bildvorschau schließen"
+        >
+            ×
+        </button>
+
+        <button
+            class="lightbox-button lightbox-previous"
+            type="button"
+            aria-label="Vorheriges Bild"
+        >
+            ←
+        </button>
+
+        <figure class="lightbox-content">
+            <img id="lightbox-image" src="" alt="">
+            <figcaption id="lightbox-caption"></figcaption>
+        </figure>
+
+        <button
+            class="lightbox-button lightbox-next"
+            type="button"
+            aria-label="Nächstes Bild"
+        >
+            →
+        </button>
+    </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const galleryImages = Array.from(
+                document.querySelectorAll(".day-gallery img")
+            );
+
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImage = document.getElementById("lightbox-image");
+            const lightboxCaption = document.getElementById("lightbox-caption");
+            const closeButton = lightbox.querySelector(".lightbox-close");
+            const previousButton = lightbox.querySelector(".lightbox-previous");
+            const nextButton = lightbox.querySelector(".lightbox-next");
+
+            let currentImageIndex = 0;
+
+            function showImage(index) {
+                currentImageIndex =
+                    (index + galleryImages.length) % galleryImages.length;
+
+                const selectedImage = galleryImages[currentImageIndex];
+                const figure = selectedImage.closest("figure");
+                const caption = figure?.querySelector("figcaption");
+
+                lightboxImage.src = selectedImage.currentSrc || selectedImage.src;
+                lightboxImage.alt = selectedImage.alt;
+                lightboxCaption.textContent = caption?.textContent.trim() || "";
+
+                lightbox.hidden = false;
+                document.body.classList.add("lightbox-open");
+                closeButton.focus();
+            }
+
+            function closeLightbox() {
+                lightbox.hidden = true;
+                document.body.classList.remove("lightbox-open");
+                galleryImages[currentImageIndex]?.focus();
+            }
+
+            galleryImages.forEach((image, index) => {
+                image.tabIndex = 0;
+                image.setAttribute("role", "button");
+                image.setAttribute(
+                    "aria-label",
+                    `${image.alt || "Galeriebild"} vergrößern`
+                );
+
+                image.addEventListener("click", () => showImage(index));
+
+                image.addEventListener("keydown", event => {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        showImage(index);
+                    }
+                });
+            });
+
+            closeButton.addEventListener("click", closeLightbox);
+            previousButton.addEventListener("click", () => {
+                showImage(currentImageIndex - 1);
+            });
+            nextButton.addEventListener("click", () => {
+                showImage(currentImageIndex + 1);
+            });
+
+            lightbox.addEventListener("click", event => {
+                if (event.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener("keydown", event => {
+                if (lightbox.hidden) return;
+
+                if (event.key === "Escape") {
+                    closeLightbox();
+                } else if (event.key === "ArrowLeft") {
+                    showImage(currentImageIndex - 1);
+                } else if (event.key === "ArrowRight") {
+                    showImage(currentImageIndex + 1);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
