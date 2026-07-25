@@ -1,0 +1,495 @@
+/* =========================================================
+   VAMOS LAGER – BILDERÜBERSICHT UND LAGERSEITEN
+   Datei: css/bilder.css
+   ========================================================= */
+
+/* ---------- ÜBERSICHT ---------- */
+
+.gallery-hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-hero::after {
+    content: "";
+    position: absolute;
+    right: -110px;
+    bottom: -230px;
+    width: 450px;
+    height: 450px;
+    border: 70px solid rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+.country-flags {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 30px;
+}
+
+.country-flags img {
+    width: 62px;
+    height: 42px;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+}
+
+.gallery-layout {
+    display: grid;
+    grid-template-columns: 245px 1fr;
+    align-items: start;
+    gap: 42px;
+}
+
+.year-navigation-inner,
+.day-navigation-inner {
+    position: sticky;
+    top: 110px;
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.year-navigation-title {
+    margin-bottom: 16px;
+    color: var(--green-dark);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.year-navigation nav,
+.day-navigation nav {
+    display: grid;
+    gap: 5px;
+}
+
+.year-navigation nav a,
+.day-navigation nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 11px;
+    border-radius: 10px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition:
+        color var(--transition),
+        background var(--transition),
+        transform var(--transition);
+}
+
+.year-navigation nav a span {
+    min-width: 48px;
+    color: var(--green-dark);
+    font-size: 0.78rem;
+}
+
+.year-navigation nav a:hover,
+.day-navigation nav a:hover {
+    color: var(--green-dark);
+    background: var(--green-light);
+    transform: translateX(4px);
+}
+
+.compact-heading {
+    margin-bottom: 30px;
+}
+
+.camp-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.camp-card {
+    display: block;
+    padding: 26px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+}
+
+.camp-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(42, 170, 80, 0.44);
+    box-shadow: 0 26px 60px rgba(4, 61, 32, 0.2);
+}
+
+.featured-camp {
+    grid-column: 1 / -1;
+    padding: 0;
+    overflow: hidden;
+}
+
+.camp-card-image {
+    min-height: 330px;
+    padding: 30px;
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    color: var(--white);
+    background-position: center;
+    background-size: cover;
+}
+
+.camp-year,
+.camp-country {
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-weight: 900;
+}
+
+.camp-year {
+    color: var(--green-deep);
+    background: var(--yellow);
+}
+
+.camp-country {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(4, 61, 32, 0.55);
+    backdrop-filter: blur(8px);
+}
+
+.camp-card-content {
+    padding: 28px;
+}
+
+.camp-card-content h3 {
+    margin-bottom: 8px;
+    font-size: 1.55rem;
+}
+
+.camp-card p {
+    color: var(--text-muted);
+}
+
+.camp-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.camp-card-top img {
+    width: 48px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 6px 14px rgba(4, 61, 32, 0.16);
+}
+
+.camp-symbol {
+    font-size: 2rem;
+}
+
+.camp-year-small {
+    padding: 5px 10px;
+    border-radius: 999px;
+    color: var(--green-dark);
+    background: var(--green-light);
+    font-size: 0.78rem;
+    font-weight: 800;
+}
+
+.camp-card h3 {
+    margin-bottom: 8px;
+    font-size: 1.25rem;
+}
+
+.camp-link {
+    display: inline-block;
+    margin-top: 18px;
+    color: var(--green-dark);
+    font-weight: 800;
+}
+
+.archive-card {
+    background:
+        radial-gradient(
+            circle at 88% 18%,
+            rgba(244, 205, 41, 0.18),
+            transparent 28%
+        ),
+        var(--white);
+}
+
+.video-card {
+    color: var(--white);
+    border-color: transparent;
+    background:
+        radial-gradient(
+            circle at 85% 18%,
+            rgba(244, 205, 41, 0.2),
+            transparent 28%
+        ),
+        linear-gradient(145deg, var(--green-deep), var(--green-dark));
+}
+
+.video-card p,
+.video-card .camp-link {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.video-card .camp-year-small {
+    color: var(--green-deep);
+    background: var(--yellow);
+}
+
+/* ---------- EINZELNES LAGER ---------- */
+
+.camp-detail-hero {
+    min-height: 500px;
+    padding: 70px 0;
+    display: flex;
+    align-items: flex-end;
+    color: var(--white);
+    background-color: var(--green-deep);
+    background-position: center;
+    background-size: cover;
+}
+
+.back-link {
+    display: inline-flex;
+    margin-bottom: 35px;
+    padding: 10px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 10px;
+    background: rgba(4, 61, 32, 0.38);
+    backdrop-filter: blur(8px);
+    font-weight: 700;
+}
+
+.back-link:hover {
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.camp-detail-heading {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.camp-detail-heading > img {
+    width: 90px;
+    height: 60px;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+}
+
+.camp-detail-heading h1 {
+    margin-bottom: 10px;
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 0.95;
+}
+
+.camp-detail-heading p:last-child {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.08rem;
+}
+
+.camp-days-section {
+    padding-top: 70px;
+}
+
+.camp-days-layout {
+    display: grid;
+    grid-template-columns: 225px 1fr;
+    align-items: start;
+    gap: 42px;
+}
+
+.day-list {
+    display: grid;
+    gap: 38px;
+}
+
+.day-entry {
+    padding: clamp(26px, 5vw, 46px);
+    scroll-margin-top: 110px;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.day-heading {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.day-number {
+    width: 62px;
+    height: 62px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    border-radius: 18px;
+    color: var(--green-deep);
+    background: var(--yellow);
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+
+.day-label {
+    color: var(--green);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.day-heading h2 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    line-height: 1.1;
+}
+
+.day-text {
+    display: grid;
+    gap: 14px;
+    margin-bottom: 30px;
+    color: var(--text-muted);
+    font-size: 1.02rem;
+}
+
+.day-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.day-gallery figure {
+    overflow: hidden;
+    border-radius: 16px;
+    background: var(--background);
+}
+
+.day-gallery img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.day-gallery figure:hover img {
+    transform: scale(1.04);
+}
+
+.day-gallery figcaption {
+    padding: 12px 14px;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+}
+
+.next-camp-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    padding: 34px;
+    color: var(--white);
+    border-radius: 22px;
+    background:
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(244, 205, 41, 0.2),
+            transparent 28%
+        ),
+        linear-gradient(145deg, var(--green-deep), var(--green-dark));
+    box-shadow: var(--shadow-strong);
+}
+
+.next-camp-box h2 {
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 980px) {
+    .gallery-layout,
+    .camp-days-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .year-navigation-inner,
+    .day-navigation-inner {
+        position: static;
+    }
+
+    .year-navigation nav {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .day-navigation nav {
+        display: flex;
+        overflow-x: auto;
+        padding-bottom: 6px;
+    }
+
+    .day-navigation nav a {
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 700px) {
+    .camp-grid,
+    .day-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .year-navigation nav {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .camp-card-image {
+        min-height: 260px;
+    }
+
+    .camp-detail-hero {
+        min-height: 430px;
+    }
+
+    .camp-detail-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .camp-detail-heading > img {
+        width: 72px;
+        height: 48px;
+    }
+
+    .day-heading {
+        align-items: flex-start;
+    }
+
+    .next-camp-box {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 470px) {
+    .year-navigation nav {
+        grid-template-columns: 1fr;
+    }
+}
